@@ -1,0 +1,21 @@
+%tr
+  %td
+    = doc.id
+  %td
+    = doc.title
+  %td
+    = doc.category_tree
+  %td
+    = doc.slug
+  %td
+    - if doc.file_url
+      %a{href: doc.file_url, title: doc.file_name}
+        = doc.short_file_name
+  %td
+    = doc.created_at
+  %th
+    %a{href: "/admin/documents/#{doc.id}/edit", class: "badge badge-info"}
+      edit
+  %th
+    %a{href: "/admin/documents/#{doc.id}", class: "badge badge-danger", "data-method" => "delete"}
+      delete

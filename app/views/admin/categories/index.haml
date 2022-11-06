@@ -1,0 +1,22 @@
+.row
+  .col-sm-3
+    %h3 категории
+  .col-sm-3
+    %a{href: "/admin/categories/new"}
+      %button.btn.btn-success{:type => "button"} new
+%hr
+%table{class: "table"}
+  %thead
+    %th
+      ID
+    %th
+      Название
+    %th
+      Slug
+    %th
+      Дата создания
+    %th
+    %th
+  %tbody
+    - @categories.each do |category|
+      = render partial: "admin/categories/category", locals: { category: category }

@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Образцы документов
+    = csrf_meta_tags
+    = csp_meta_tag
+    = Gon::Base.render_data
+    = stylesheet_link_tag 'application', media: 'all'
+  %body
+    = render partial: "shared/header"
+    #react-app.container-fluid
+      = yield
+    = javascript_include_tag 'application'

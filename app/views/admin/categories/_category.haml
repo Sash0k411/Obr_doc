@@ -1,0 +1,15 @@
+%tr
+  %td
+    = category.id
+  %td
+    = category.category_tree
+  %td
+    = category.slug
+  %td
+    = category.created_at
+  %th
+    %a{href: "/admin/categories/#{category.id}/edit", class: "badge badge-info"}
+      edit
+  %th
+    %a{href: "/admin/categories/#{category.id}", class: "badge badge-danger", "data-method" => "delete"}
+      delete

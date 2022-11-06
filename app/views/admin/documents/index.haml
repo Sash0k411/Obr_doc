@@ -1,0 +1,47 @@
+- categories = Category.order(id: :desc).map {|c| [c.title, c.id]}
+
+.row
+  .col-sm-3
+    %h3 документы
+  .col-sm-9
+    .row
+      = form_tag admin_documents_path, method: :get do
+        .row
+          .col-3
+            .form-group
+              = text_field_tag :query, params[:query], class: 'form-control', placeholder: 'название'
+          .col-3
+            .form-group
+              = select_tag :category_id, options_for_select(categories, params[:category_id]), include_blank: 'Категория', class: 'form-control'
+          .col-2
+            %button{type: 'submit', class: 'btn btn-info'}
+              поиск
+          .col-2
+            %a{href: "/admin/documents/", class: "btn btn-warning"}
+              Сброс
+          .col-2
+            %a{href: "/admin/documents/new", class: "btn btn-success"}
+              new
+
+%hr
+%table{class: "table"}
+  %thead
+    %th
+      ID
+    %th
+      Название
+    %th
+      Категория
+    %th
+      Slug
+    %th
+      URL
+    %th
+      Дата создания
+    %th
+    %th
+  %tbody
+    - @documents.each do |doc|
+      = render partial: "admin/documents/document", locals: { doc: doc }
+
+  = paginate @documents
