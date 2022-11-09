@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin/pages#main'
   namespace :admin do
     resources :categories
-    resources :documents
+    resources :documents  do
+      collection do
+        post :import
+        get :other
+        get :export
+      end
+    end
   end
 
   namespace :api do

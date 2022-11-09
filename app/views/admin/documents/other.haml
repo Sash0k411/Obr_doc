@@ -1,0 +1,25 @@
+.row
+  .col-sm-12
+    %h3 экпорт/импорт
+  .col-sm-12
+    - if @message
+      .alert.alert-success
+        = @message
+    - if @errors
+      .alert.alert-danger
+        = @errors
+  .col-sm-12
+    .row
+      .col-2
+        %a{href: "/admin/documents/export", class: "btn btn-success"}
+          экспорт
+      .col-6
+        = form_for :import, url: import_admin_documents_path, method: :post do |f|
+          .row
+            .col-6
+              .form-group
+                = f.file_field :file, class: 'form-control', placeholder: 'файл'
+            .col-6
+              .form-group
+                %button{type: 'submit', class: 'btn btn-info'}
+                  загрузить

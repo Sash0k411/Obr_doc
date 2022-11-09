@@ -10,6 +10,22 @@ module Admin
       set_categories
     end
 
+    def export
+      scope = Document.includes(:category, :file)
+      filename = "Document #{Time.zone.now.strftime('%H.%M %d.%m.%Y')}"
+      render xlsx: Document.to_xlsx(instances: scope.to_a, sheet_name: filename), filename: filename
+    end
+
+    def import
+      result = Document::Import.run(params.fetch(:import, {}))
+      if result.valid?
+        @message = "Import successful"
+      else
+        @errors = "Import failed: #{result.errors.messages}"
+      end
+      render other_admin_documents_path
+    end
+
     def edit
       document = Document.find(params[:id])
       gon.document = DocumentSerializer.new(document).as_json
