@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   end
 
   def default_metatags
+    {
 
+    }
   end
 
 end

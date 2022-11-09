@@ -5,7 +5,7 @@ module Admin
     layout 'admin'
 
     def main
-
+      render 'admin/main'
     end
   end
 end

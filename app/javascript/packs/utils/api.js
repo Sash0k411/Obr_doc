@@ -61,6 +61,14 @@ const api = {
     create: (file) => {
       return request(`/api/files`, filefy(file), { method: 'POST' });
     }
+  },
+  pages: {
+    create: (params) => {
+      return request(`/api/pages/`, jsonify({page: params}), {method: 'POST'});
+    },
+    update: (params) => {
+      return request(`/api/pages/${params.id}`, jsonify({page: params}), {method: 'PUT'});
+    }
   }
 };
 

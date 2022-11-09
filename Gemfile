@@ -34,7 +34,7 @@ gem 'draper'
 gem 'meta-tags'
 gem 'spreadsheet_architect'
 gem 'roo'
-
+gem 'purecss'
 
 group :development, :test do
   gem 'pry-byebug'

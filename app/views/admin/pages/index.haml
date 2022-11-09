@@ -1,0 +1,22 @@
+.row
+  .col-sm-3
+    %h3 страницы
+  .col-sm-3
+    %a{href: "/admin/pages/new"}
+      %button.btn.btn-success{:type => "button"} new
+%hr
+%table{class: "table"}
+  %thead
+    %th
+      ID
+    %th
+      Название
+    %th
+      Slug
+    %th
+      Дата создания
+    %th
+    %th
+  %tbody
+    - @pages.each do |page|
+      = render partial: "admin/pages/page", locals: { page: page }
