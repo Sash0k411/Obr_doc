@@ -1,1 +1,1 @@
-alert('sidebar')
+// alert('sidebar')

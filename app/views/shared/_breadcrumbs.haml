@@ -1,5 +1,5 @@
 - #breadcrumbs
 - items.each_with_index do |item, index|
-  - delimeter = index == (items.count - 1) ? "" : " -> "
+  - delimeter = index == (items.count - 1) ? "" : " > "
   %a{href: item.url, title: item.title}
     = "#{item.title}#{delimeter}"

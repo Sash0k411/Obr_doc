@@ -5,9 +5,8 @@
 %p
   = @document.description.html_safe
 
-%button
-  %a{href: @document.file_url, title: @document.title}
-    = "Скачать образец '#{@document.title}'"
+%a{href: @document.file_url, title: @document.title, class: "pure-button pure-button-primary"}
+  = "Скачать образец '#{@document.title}'"
 
 .app-document
   .app-document-preview

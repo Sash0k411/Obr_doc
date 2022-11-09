@@ -1,0 +1,15 @@
+%tr
+  %td
+    = page.id
+  %td
+    = page.title
+  %td
+    = page.slug
+  %td
+    = page.created_at
+  %th
+    %a{href: "/admin/pages/#{page.id}/edit", class: "badge badge-info"}
+      edit
+  %th
+    %a{href: "/admin/pages/#{page.id}", class: "badge badge-danger", "data-method" => "delete"}
+      delete

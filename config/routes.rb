@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   root 'pages#main'
-  get 'admin', to: 'admin/pages#main'
+  get 'admin', to: 'admin/application#main'
   namespace :admin do
     resources :categories
     resources :documents  do
@@ -14,12 +14,14 @@ Rails.application.routes.draw do
         get :export
       end
     end
+    resources :pages
   end
 
   namespace :api do
     resources :categories
     resources :documents
     resources :files
+    resources :pages
   end
 
   get "/c", to: "categories#index"

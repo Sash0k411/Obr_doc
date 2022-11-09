@@ -10,6 +10,14 @@
     &-preview {
       flex: 4;
       padding: $padding;
+
+      p {
+        font-size: 0.8rem !important;
+      }
+
+      span {
+        font-size: 0.8rem !important;
+      }
     }
   }
 }

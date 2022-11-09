@@ -1,6 +1,11 @@
+@import "purecss/base";
+@import "purecss/base-context";
+@import "purecss/buttons";
+@import "purecss/menus";
+@import "purecss/grids";
+
 @import "app/colors";
 @import "app/reset";
-
 @import "app/main";
 @import "app/document";
 @import "app/category";
