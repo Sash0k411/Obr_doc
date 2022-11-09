@@ -1,0 +1,32 @@
+.app {
+  &-container {
+    display: flex;
+  }
+
+  &-sidebar {
+    background: $gray;
+    flex: 1;
+    height: 100%;
+    max-width: 300px;
+
+    a {
+      display: block;
+      margin: 15px;
+    }
+
+    a.mg-1 {
+      margin-left: 30px;
+    }
+    a.mg-2 {
+      margin-left: 45px;
+    }
+    a.mg-3 {
+      margin-left: 60px;
+    }
+  }
+
+  &-content {
+    flex: 4;
+    padding: 15px;
+  }
+}

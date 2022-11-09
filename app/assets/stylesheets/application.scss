@@ -1,2 +1,6 @@
-@import "material";
-@import "react-draft-wysiwyg/dist/react-draft-wysiwyg";
+@import "app/colors";
+@import "app/reset";
+
+@import "app/main";
+@import "app/document";
+@import "app/category";

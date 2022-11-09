@@ -1,0 +1,4 @@
+%a{href: category.url, class: "mg-#{level}"}
+  = category.title
+- category.children.each do |child|
+  = render partial: 'shared/category_item', locals: { category: child, level: child.ancestry.split("/").size }
