@@ -6,9 +6,9 @@
     = csrf_meta_tags
     = csp_meta_tag
     = Gon::Base.render_data
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'admin', media: 'all'
   %body
-    = render partial: "shared/header"
+    = render partial: "admin/shared/header"
     #react-app.container-fluid
       = yield
     = javascript_include_tag 'application'

@@ -1,0 +1,4 @@
+= render partial: "shared/breadcrumbs", locals: { items: @document.category.parents.to_a + [@document.category] }
+
+%h1
+  = @document.title
