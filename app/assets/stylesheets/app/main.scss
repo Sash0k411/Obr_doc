@@ -11,22 +11,22 @@
 
     a {
       display: block;
-      margin: 15px;
+      margin: $padding;
     }
 
     a.mg-1 {
-      margin-left: 30px;
+      margin-left: 2 * $padding;
     }
     a.mg-2 {
-      margin-left: 45px;
+      margin-left: 3 * $padding;
     }
     a.mg-3 {
-      margin-left: 60px;
+      margin-left: 4 * $padding;
     }
   }
 
   &-content {
     flex: 4;
-    padding: 15px;
+    padding: $padding;
   }
 }

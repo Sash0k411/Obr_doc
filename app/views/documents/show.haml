@@ -2,3 +2,19 @@
 
 %h1
   = @document.title
+%p
+  = @document.description.html_safe
+
+%button
+  %a{href: @document.file_url, title: @document.title}
+    = "Скачать образец '#{@document.title}'"
+
+.app-document
+  .app-document-preview
+    %blockquote
+      = @document.html&.html_safe
+  .app-document-sidebar
+    %h2
+      похожие документы
+
+    = render partial: "shared/same_documents", locals: { documents: @document.same_documents }

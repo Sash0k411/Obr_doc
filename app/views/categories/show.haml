@@ -5,8 +5,5 @@
 %p
   = @category.description
 
-%ul
-  - Document.where(category_id: @category.subtree_ids).each do |document|
-    %li
-      %a{href: document.url}
-        = document.title
+- documents = Document.where(category_id: @category.subtree_ids)
+= render partial: "shared/same_documents", locals: { documents: documents }

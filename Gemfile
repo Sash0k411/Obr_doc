@@ -31,6 +31,7 @@ gem 'mini_magick'
 gem 'russian'
 gem 'docx'
 gem 'draper'
+gem 'meta-tags'
 
 group :development, :test do
   gem 'pry-byebug'

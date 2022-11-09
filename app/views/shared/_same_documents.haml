@@ -1,0 +1,5 @@
+%ul
+  - documents.each do |document|
+    %li
+      %a{href: document.url, title: document.title}
+        = document.title

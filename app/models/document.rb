@@ -1,4 +1,5 @@
 class Document < ApplicationRecord
-    self.table_name = :files
-    mount_uploader :file, ::FileUploader
+    include SeoHelper
+    belongs_to :category, optional: true
+    belongs_to :file, optional: true, class_name: "Document::File", foreign_key: :file_id
 end

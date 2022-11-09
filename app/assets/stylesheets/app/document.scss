@@ -1,0 +1,15 @@
+.app {
+  &-document {
+    display: flex;
+    &-sidebar {
+      flex: 1;
+      height: 100%;
+      padding: $padding;
+    }
+
+    &-preview {
+      flex: 4;
+      padding: $padding;
+    }
+  }
+}
