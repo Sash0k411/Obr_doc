@@ -10,17 +10,26 @@ a {
 }
 
 h1 {
-
+  font-size: 2rem;
 }
 
 h2 {
-
+  font-size: 1.6rem;
 }
 
 h3 {
-
+  font-size: 1.2rem;
 }
 
-p {
+a p {
+  font-size: 0.8rem;
+}
 
+ul {
+  padding: 0;
+  margin: 0;
+    li {
+      list-style: none;
+      margin-bottom: $padding;
+    }
 }

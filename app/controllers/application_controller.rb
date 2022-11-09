@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
     super(fallback_location: "/")
   end
 
+  def default_metatags
+
+  end
+
 end

@@ -15,8 +15,21 @@ class DocumentDecorator < ApplicationDecorator
   end
 
   def category_tree
-    if category = object.category
+    if category
       CategoryDecorator.new(category).category_tree
     end
   end
+
+  def category
+    @category ||= object.category
+  end
+
+  def same_documents
+    if category
+      Document.where(category_id: category.subtree_ids).where.not(id: id).last(10).map do |doc|
+        DocumentDecorator.new(doc)
+      end
+    end
+  end
+
 end
