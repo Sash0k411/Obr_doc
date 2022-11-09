@@ -32,6 +32,9 @@ gem 'russian'
 gem 'docx'
 gem 'draper'
 gem 'meta-tags'
+gem 'spreadsheet_architect'
+gem 'roo'
+
 
 group :development, :test do
   gem 'pry-byebug'

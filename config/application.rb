@@ -13,6 +13,8 @@ module ObrDoc
 
     config.secret_key_base = Settings.secret_key_base
     config.time_zone = 'Moscow'
+    ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
