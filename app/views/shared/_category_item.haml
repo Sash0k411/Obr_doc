@@ -1,4 +1,22 @@
-%a{href: category.url, class: "mg-#{level}"}
-  = category.title
-- category.children.each do |child|
-  = render partial: 'shared/category_item', locals: { category: child, level: child.ancestry.split("/").size }
+-#%a{href: category.url, class: "mg-#{level}"}
+-#  = category.title
+-#- category.children.each do |child|
+-#  = render partial: 'shared/category_item', locals: { category: child, level: child.ancestry.split("/").size }
+-#.pure-menu.custom-restricted-width
+-#  %ul.pure-menu-list
+-#    %li.pure-menu-item
+-#      %a.pure-menu-link{href: category.url, class: "mg-#{level}"}
+-#        = category.title
+-#      - category.children.each do |child|
+-#        = render partial: 'shared/category_item', locals: { category: child, level: child.ancestry.split("/").size }
+-#
+
+
+%li.pure-menu-item.pure-menu-selected
+  %a.pure-menu-link{href: category.url, class: "mg-#{level}"}
+    = category.title
+  %ul.pure-menu-children
+    %li.pure-menu-item.pure-menu-has-children
+      %a#menuLink1.pure-menu-link
+        - category.children.each do |child|
+          = render partial: 'shared/category_item', locals: { category: child, level: child.ancestry.split("/").size }

@@ -37,3 +37,4 @@ yarn-debug.log*
 /config/settings.yml
 /config/database.yml
 /config/application.yml
+/public/uploads
