@@ -16,7 +16,6 @@ class FileSerializer < ApplicationSerializer
 
   def html
     return unless @parse
-
     doc = Docx::Document.open(object.file)
     doc.paragraphs.map do |p|
       p.to_html

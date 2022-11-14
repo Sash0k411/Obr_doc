@@ -6,7 +6,7 @@ class ApplicationInteraction < ActiveInteraction::Base
 
   def initialize(inputs = {})
     inputs = normalize_inputs!(inputs)
-    process_inputs(inputs.symbolize_keys)
+    process(inputs.symbolize_keys)
   end
 
   def valid?(*)
