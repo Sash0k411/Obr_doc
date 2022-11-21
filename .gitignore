@@ -38,3 +38,5 @@ yarn-debug.log*
 /config/database.yml
 /config/application.yml
 /public/uploads
+/public/sitemap.xml
+/public/sitemap.xml.gz

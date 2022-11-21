@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   get "/c", to: "categories#index"
+  get "/sitemap", to: "application#sitemap"
 
   (1..NESTED_LEVEL).to_a.each do |level|
       categories_part = (1..level).to_a.map { |num| ":c_#{num}"}.join("/")
