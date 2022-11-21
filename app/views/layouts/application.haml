@@ -8,8 +8,16 @@
     = stylesheet_link_tag 'application', media: 'all'
     = display_meta_tags site: 'Образцы документов'
   %body
-    .app-container
-      = render partial: "shared/sidebar"
-      .app-content
-        = yield
+    .d-flex.app
+      .app-container
+        = render partial: "shared/mobile_nav"
+        .container-fluid
+          = yield
+
   = javascript_include_tag 'application'
+
+  :javascript
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $(".app").toggleClass("mobile");
+    });

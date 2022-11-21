@@ -1,0 +1,7 @@
+%h1 Карта сайта
+
+%ul
+  - Site.urls.each do |data|
+    %li
+      %a{href: data[:url], title: data[:title]}
+        = data[:title]
