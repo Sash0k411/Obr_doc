@@ -1,19 +1,26 @@
-= render partial: "shared/breadcrumbs", locals: { items: @document.category.parents.to_a + [@document.category] }
+= render partial: "shared/breadcrumbs", locals: { items: @document.category.parents_with_self }
 
-%h1
-  = @document.title
-%p
-  = @document.description.html_safe
+.container-fluid
+  %h1.card-title
+    = @document.title
+  %p
+    = @document.description.html_safe
+  %a{href: @document.file_url, title: @document.title, class: "btn btn-primary"}
+    = "Скачать образец"
+  %br
+  %br
+  .row
+    / Blog Entries Column
+    .col-md-8
+      .card.mb-4
+        -#%img.card-img-top{:alt => "Card image cap", :src => "http://placehold.it/750x300"}/
+        .card-body
+          %p.card-text
+            = @document.html&.html_safe
 
-%a{href: @document.file_url, title: @document.title, class: "pure-button pure-button-primary"}
-  = "Скачать образец "
-
-.app-document
-  .app-document-preview
-    %blockquote
-      = @document.html&.html_safe
-  .app-document-sidebar
-    %h2
-      похожие документы
-
-    = render partial: "shared/same_documents", locals: { documents: @document.same_documents }
+    / Sidebar Widgets Column
+    .col-md-4
+      .card.mb-4
+        %h3.card-header похожие документы
+        .card-body
+          = render partial: "shared/same_documents", locals: { documents: @document.same_documents }
