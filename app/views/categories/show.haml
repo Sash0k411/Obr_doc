@@ -1,9 +1,10 @@
-= render partial: "shared/breadcrumbs", locals: { items: @category.parents }
+= render partial: "shared/breadcrumbs", locals: { items: @category.parents_with_self }
 
-%h1
-  = @category.title
-%p
-  = @category.description
+.container-fluid
+  %h1
+    = @category.title
+  %p
+    = @category.description
 
-- documents = Document.where(category_id: @category.subtree_ids)
-= render partial: "shared/same_documents", locals: { documents: documents }
+  - documents = Document.where(category_id: @category.subtree_ids)
+  = render partial: "shared/same_documents", locals: { documents: documents }

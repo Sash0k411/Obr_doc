@@ -11,8 +11,7 @@
     .d-flex.app
       .app-container
         = render partial: "shared/mobile_nav"
-        .container-fluid
-          = yield
+        = yield
 
   = javascript_include_tag 'application'
 

@@ -51,6 +51,10 @@ module Tree
       self.class.where(id: parent_ids)
     end
 
+    def parents_with_self
+      self.class.where(id: parent_ids + [id])
+    end
+
     # returns current node and its children
     def subtree
       self.class.where(subtree_conditions)

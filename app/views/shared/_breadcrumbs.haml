@@ -1,5 +1,9 @@
 - #breadcrumbs
-- items.each_with_index do |item, index|
-  - delimeter = index == (items.count - 1) ? "" : " > "
-  %a{href: item.url, title: item.title}
-    = "#{item.title}#{delimeter}"
+%nav{"aria-label" => "breadcrumb"}
+  %ol.breadcrumb
+    - items.each_with_index do |item, index|
+      - active = index == (items.count - 1)
+      %li.breadcrumb-item{class: "#{active && 'active'}"}
+        %a{href: item.url, title: item.title}
+          = "#{item.title}"
+      -#%li.breadcrumb-item.active{"aria-current" => "page"} Data
