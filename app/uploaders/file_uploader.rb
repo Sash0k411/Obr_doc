@@ -14,11 +14,11 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-     if original_filename.present?
+    if original_filename.present?
       "#{Russian::transliterate(original_filename.gsub(file.extension, '')).parameterize}.#{file.extension}"
-     else
+    else
       "#{model.class.name.underscore}_#{Time.now.to_i}.#{file.try(:extension)}"
-     end
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
