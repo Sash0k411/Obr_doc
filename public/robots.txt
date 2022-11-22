@@ -1,4 +1,3 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 Sitemap: https://obrazec-documenta.ru/sitemap.xml
 User-agent: *
 Allow: /
