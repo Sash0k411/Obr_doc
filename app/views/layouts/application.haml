@@ -2,6 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title Образцы документов
     = csrf_meta_tags
     = csp_meta_tag
@@ -18,5 +19,5 @@
   :javascript
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
-      $(".app").toggleClass("mobile");
+      $(".app").toggleClass("app-mobile");
     });

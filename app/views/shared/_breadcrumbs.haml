@@ -1,5 +1,5 @@
 - #breadcrumbs
-%nav{"aria-label" => "breadcrumb"}
+- content_for :breadcrumbs do
   %ol.breadcrumb
     - items.each_with_index do |item, index|
       - active = index == (items.count - 1)
@@ -7,3 +7,6 @@
         %a{href: item.url, title: item.title}
           = "#{item.title}"
       -#%li.breadcrumb-item.active{"aria-current" => "page"} Data
+
+%nav.app-desktop{"aria-label" => "breadcrumb"}
+  = yield :breadcrumbs
