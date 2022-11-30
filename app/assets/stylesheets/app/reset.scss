@@ -27,8 +27,21 @@ a p {
 ul {
   padding: 0;
   margin: 0;
-    li {
-      list-style: none;
-      margin-bottom: $padding;
-    }
+
+  li {
+    list-style: none;
+    margin-bottom: $padding;
+  }
+
+  button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }

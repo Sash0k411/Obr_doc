@@ -6,8 +6,12 @@
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
+    &-content {
+      height: 100vh;
+      overflow-y: scroll;
+    }
     .sidebar-heading {
-      padding: 0.875rem 1.25rem;
+      padding: 1.125rem 1.25rem;
       font-size: 1.2rem;
     }
     .list-group {

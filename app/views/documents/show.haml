@@ -10,13 +10,13 @@
   %br
   %br
   .row
-    / Blog Entries Column
-    .col-md-8
-      .card.mb-4
-        -#%img.card-img-top{:alt => "Card image cap", :src => "http://placehold.it/750x300"}/
-        .card-body
-          %p.card-text
-            = @document.html&.html_safe
+    - if @document.html.present?
+      .col-md-8
+        .card.mb-4
+          -#%img.card-img-top{:alt => "Card image cap", :src => "http://placehold.it/750x300"}/
+          .card-body
+            %p.card-text
+              = @document.html&.html_safe
 
     / Sidebar Widgets Column
     .col-md-4
