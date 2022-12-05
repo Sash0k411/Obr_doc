@@ -1,9 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  def sitemap
-    render "pages/sitemap"
-  end
-
   private
 
   def redirect_back

@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+
+  # extend PageCache
+  caches_page :show, :index
   before_action :set_category, only: [:show]
 
   def show

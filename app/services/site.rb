@@ -17,7 +17,26 @@ class Site
         }
       end
 
-      ar
+      ar + other
+    end
+
+    def other
+      [
+        {
+          url: "/",
+          title: "Главная"
+        },
+        {
+          url: "/sitemap",
+          title: "Карта сайта"
+        }
+      ]
+    end
+
+    def warm(prefix = Settings.prod_host)
+      urls.each do |data|
+        RestClient.get("#{prefix}#{data[:url]}")
+      end
     end
   end
 end

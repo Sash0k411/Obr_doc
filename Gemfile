@@ -34,8 +34,8 @@ gem 'meta-tags'
 gem 'spreadsheet_architect'
 gem 'roo'
 gem 'purecss'
+gem "actionpack-page_caching"
 gem 'docx'
-
 
 group :development, :test do
   gem 'pry-byebug'

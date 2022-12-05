@@ -1,7 +1,7 @@
 - root_categories = Category.where(ancestry: nil)
 .app-sidebar.bg-light.border-right
   .app-sidebar-content
-    .sidebar-heading Категории
+    .sidebar-heading Main
     .list-group.list-group-flush
     - root_categories.each do |category|
       = render partial: 'shared/category_item', locals: { category: category, level: 0 }
