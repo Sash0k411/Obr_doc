@@ -15,7 +15,7 @@ class Document::Import < ApplicationInteraction
     end
 
     data_rows.each do |row|
-      if document = Document.find_by(id: row.delete(:id))
+      if (document = Document.find_by(id: row.delete(:id)))
         document.update(row)
       else
         Document.create(row)
