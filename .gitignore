@@ -40,3 +40,4 @@ yarn-debug.log*
 /public/uploads
 /public/sitemap.xml
 /public/sitemap.xml.gz
+/public/cached_pages
